@@ -1,0 +1,164 @@
+{
+    "featured": [
+        {
+            "id": "mobile-legends",
+            "title": "Mobile Legends",
+            "description": "Paquetes de Diamantes",
+            "image": "assets/images/mobile-legends.jpg",
+            "category": "mobile-legends",
+            "badge": ""
+        },
+        {
+            "id": "pubg-mobile",
+            "title": "PUBG Mobile",
+            "description": "UC y Pases de Batalla",
+            "image": "assets/images/pubg-mobile.jpg",
+            "category": "pubg-mobile",
+            "badge": ""
+        },
+        {
+            "id": "free-fire",
+            "title": "Free Fire",
+            "description": "Diamantes y Pases Élite",
+            "image": "assets/images/free-fire.jpg",
+            "category": "free-fire",
+            "badge": "Hot"
+        }
+    ],
+    "all": [
+        {
+            "id": "mobile-legends",
+            "title": "Mobile Legends: Bang Bang",
+            "description": "Paquetes de Diamantes",
+            "image": "assets/images/mobile-legends.jpg",
+            "category": "mobile-legends",
+            "badge": ""
+        },
+        {
+            "id": "free-fire",
+            "title": "Free Fire",
+            "description": "Diamantes y Pases Élite",
+            "image": "assets/images/free-fire.jpg",
+            "category": "free-fire",
+            "badge": "Hot"
+        },
+        {
+            "id": "genshin-impact",
+            "title": "Genshin Impact",
+            "description": "Cristales Génesis",
+            "image": "assets/images/genshin-impact.jpg",
+            "category": "genshin-impact",
+            "badge": ""
+        },
+        {
+            "id": "magic-chess-go-go",
+            "title": "Magic Chess Go Go",
+            "description": "Paquetes Premium",
+            "image": "assets/images/magic-chess-go-go.jpg",
+            "category": "magic-chess-go-go",
+            "badge": ""
+        },
+        {
+            "id": "marvel-rivals",
+            "title": "Marvel Rivals",
+            "description": "Monedas y Paquetes",
+            "image": "assets/images/marvel-rivals.jpg",
+            "category": "marvel-rivals",
+            "badge": ""
+        },
+        {
+            "id": "wild-rift",
+            "title": "Wild Rift",
+            "description": "Wild Cores",
+            "image": "assets/images/wild-rift.jpg",
+            "category": "wild-rift",
+            "badge": ""
+        },
+        {
+            "id": "arena-breakout",
+            "title": "Arena Breakout",
+            "description": "Monedas Premium",
+            "image": "assets/images/arena-breakout.jpg",
+            "category": "arena-breakout",
+            "badge": ""
+        },
+        {
+            "id": "blood-strike",
+            "title": "Blood Strike",
+            "description": "Paquetes Premium",
+            "image": "assets/images/blood-strike.jpg",
+            "category": "blood-strike",
+            "badge": ""
+        },
+        {
+            "id": "zenless-zone-zero",
+            "title": "Zenless Zone Zero",
+            "description": "Monedas Premium",
+            "image": "assets/images/zenless-zone-zero.jpg",
+            "category": "zenless-zone-zero",
+            "badge": ""
+        },
+        {
+            "id": "honor-of-kings",
+            "title": "Honor of Kings",
+            "description": "Tokens Premium",
+            "image": "assets/images/honor-of-kings.jpg",
+            "category": "honor-of-kings",
+            "badge": ""
+        },
+        {
+            "id": "pubg-mobile",
+            "title": "PUBG Mobile",
+            "description": "UC y Pases de Batalla",
+            "image": "assets/images/pubg-mobile.jpg",
+            "category": "pubg-mobile",
+            "badge": ""
+        },
+        {
+            "id": "roblox",
+            "title": "Roblox",
+            "description": "Robux y Paquetes",
+            "image": "assets/images/roblox.jpg",
+            "category": "roblox",
+            "badge": ""
+        }
+    ],
+    "products": [
+        {
+            "id": "ml-diamonds",
+            "title": "Diamantes de Mobile Legends",
+            "description": "Diamantes premium para Mobile Legends.",
+            "image": "assets/images/ml-diamonds.jpg",
+            "category": "mobile-legends",
+            "badge": "",
+            "packages": [
+                { "amount": "86 Diamantes", "price": "$2.99" },
+                { "amount": "172 Diamantes", "price": "$5.99" }
+            ]
+        },
+        {
+            "id": "pubg-uc",
+            "title": "UC de PUBG Mobile",
+            "description": "Unknown Cash para PUBG Mobile.",
+            "image": "assets/images/pubg-uc.jpg",
+            "category": "pubg-mobile",
+            "badge": "Popular",
+            "packages": [
+                { "amount": "60 UC", "price": "$0.99" },
+                { "amount": "325 UC", "price": "$4.99" }
+            ]
+        },
+        {
+            "id": "ff-diamonds",
+            "title": "Diamantes de Free Fire",
+            "description": "Diamantes premium para Garena Free Fire.",
+            "image": "assets/images/ff-diamonds.jpg",
+            "category": "free-fire",
+            "badge": "",
+            "packages": [
+                { "amount": "100 Diamantes", "price": "$1.99" },
+                { "amount": "310 Diamantes", "price": "$4.99" }
+            ]
+        }
+    ]
+}
