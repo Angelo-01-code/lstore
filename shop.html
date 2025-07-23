@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Store - Mobile Legends Diamonds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="shop-page">
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">L-Store</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="shop.html" class="active">Tienda</a></li>
+                    <li><a href="games.html">Juegos</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="mlbb-product-page">
+        <div class="container mlbb-container">
+            <div class="mlbb-content-wrapper">
+                <!-- Left: Image and game info -->
+                <div class="mlbb-info-section" data-aos="fade-up">
+                    <img alt="Mobile Legends Diamonds game character with blue hair and armor in a fantasy background" class="mlbb-product-image" src="assets/images/mobile-legends.jpg"/>
+                    <h1 class="mlbb-product-title">
+                        MOBILE LEGENDS DIAMONDS
+                    </h1>
+                    <div class="mlbb-badges-container">
+                        <div class="mlbb-badge mlbb-badge-global">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Global</span>
+                        </div>
+                        <div class="mlbb-badge mlbb-badge-instant">
+                            <i class="fas fa-bolt"></i>
+                            <span>Entrega Instantánea</span>
+                        </div>
+                    </div>
+                    <p class="mlbb-note">
+                        Important Note: This Top Up service is not applicable to Saudi Arabia, Myanmar and Indonesia users.
+                    </p>
+                </div>
+                <!-- Right: Form and packages -->
+                <div class="mlbb-form-section" data-aos="fade-up">
+                    <div class="mlbb-card">
+                        <h2 class="mlbb-card-title">Información de pedido</h2>
+                        <div class="mlbb-input-group">
+                            <div class="mlbb-input-item">
+                                <label class="mlbb-label" for="userId">User  ID</label>
+                                <input class="mlbb-input" id="userId" placeholder="Please enter User ID" type="text"/>
+                                <button aria-label="Help User ID" class="mlbb-help-btn" type="button">
+                                    <i class="fas fa-question-circle"></i>
+                                </button>
+                            </div>
+                            <div class="mlbb-input-item">
+                                <label class="mlbb-label" for="zoneId">Zone ID</label>
+                                <input class="mlbb-input" id="zoneId" placeholder="Please enter Zone ID" type="text"/>
+                                <button aria-label="Help Zone ID" class="mlbb-help-btn" type="button">
+                                    <i class="fas fa-question-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mlbb-card">
+                        <button aria-label="Toggle package dropdown" class="mlbb-package-toggle" id="packageToggle" type="button">
+                            <span id="selectedPackage">Selecciona paquete</span>
+                            <i class="fas fa-chevron-down mlbb-package-icon" id="packageIcon"></i>
+                        </button>
+                        <div class="mlbb-package-list" id="packageList">
+                            <!-- Packages will be loaded here by JS -->
+                        </div>
+                    </div>
+                    <div class="mlbb-card">
+                        <div class="mlbb-total-section">
+                            <h3 class="mlbb-total-label">Total</h3>
+                            <p class="mlbb-total-price" id="totalPrice">S/ 0.00</p>
+                        </div>
+                        <button class="mlbb-buy-btn" type="button">
+                            COMPRA AHORA
+                        </button>
+                    </div>
+                    <div class="mlbb-description-desktop">
+                        <h4 class="mlbb-description-title">DESCRIPCIÓN</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="mlbb-description-mobile">
+                <h4 class="mlbb-description-title">DESCRIPCIÓN</h4>
+            </div>
+        </div>
+    </main>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/1234567890" target="_blank">
+            <img src="assets/images/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>L-Store</h3>
+                <p>Tu fuente confiable para monedas y paquetes de juegos premium.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="games.html">Juegos</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>WhatsApp: +1234567890</p>
+                <p>Instagram: @lstore_gaming</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 L-Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
