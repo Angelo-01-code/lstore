@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L-Store - Tienda</title>
+    <title>L-Store - Mobile Legends Diamonds</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=MiSans&display=swap" rel="stylesheet"/>
 </head>
-<body>
+<body class="shop-page">
     <header class="site-header">
         <div class="container header-content">
             <h1 class="logo">L-Store</h1>
@@ -27,30 +30,133 @@
         </div>
     </header>
 
-    <section class="shop-header">
-        <div class="container">
-            <h1>Monedas y Paquetes de Juegos Premium</h1>
-            <p>Elige entre nuestra amplia selección de monedas y paquetes de juegos.</p>
-        </div>
-    </section>
+    <main class="product-page-main">
+        <div class="container product-page-container">
+            <!-- PC Layout -->
+            <section class="pc-layout">
+                <div class="product-info-top">
+                    <!-- Left: Image and description -->
+                    <div class="product-details-section">
+                        <img alt="Mobile Legends logo white on black background" class="product-main-image" src="" id="pcProductImage"/>
+                        <div class="product-text-content">
+                            <h2 class="product-main-title" id="pcProductTitle"></h2>
+                            <div class="product-badges-container">
+                                <span class="product-badge-item product-badge-global">
+                                    <i class="fas fa-globe"></i> Global
+                                </span>
+                                <span class="product-badge-item product-badge-instant">
+                                    <i class="fas fa-bolt mr-2 text-[#60A5FA] text-base"></i> Entrega Instantánea
+                                </span>
+                            </div>
+                            <p class="product-description" id="pcProductDescription"></p>
+                        </div>
+                    </div>
+                    <!-- Middle: Order info -->
+                    <div class="order-info-card">
+                        <h3 class="card-title">Información de pedido</h3>
+                        <div class="input-fields-container" id="pcInputFields">
+                            <!-- Dynamic input fields or selectors will be loaded here -->
+                        </div>
+                    </div>
+                    <!-- Right: Total and button -->
+                    <div class="total-buy-card">
+                        <div class="total-section">
+                            <h3 class="total-label">Total</h3>
+                            <span class="total-price" id="pcTotalPrice">S/ 0.00</span>
+                        </div>
+                        <button class="buy-now-btn">COMPRA AHORA</button>
+                    </div>
+                </div>
+                <!-- Bottom grid of diamond packages -->
+                <div class="packages-grid" id="pcPackagesGrid">
+                    <!-- Packages will be loaded here by JS -->
+                </div>
+                <!-- Payment methods section -->
+                <section class="payment-methods-section">
+                    <h3 class="payment-methods-title">Métodos de Pago</h3>
+                    <div class="payment-methods-grid" id="pcPaymentMethods">
+                        <!-- Payment methods will be loaded here by JS -->
+                    </div>
+                </section>
+            </section>
 
-    <section class="filters">
-        <div class="container filter-buttons">
-            <button class="filter-btn active" data-category="all">Todos los Juegos</button>
-            <button class="filter-btn" data-category="mobile-legends">Mobile Legends</button>
-            <button class="filter-btn" data-category="pubg-mobile">PUBG Mobile</button>
-            <button class="filter-btn" data-category="free-fire">Free Fire</button>
-            <button class="filter-btn" data-category="call-of-duty">Call of Duty</button>
-            <button class="filter-btn" data-category="valorant">Valorant</button>
-            <button class="filter-btn" data-category="genshin-impact">Genshin Impact</button>
-        </div>
-    </section>
+            <!-- Mobile Layout -->
+            <section class="mobile-layout">
+                <!-- Image and Title + Badges side by side -->
+                <div class="mobile-top-info">
+                    <div class="mobile-image-wrapper">
+                        <img alt="Logo de Mobile Legends Bang Bang en fondo negro" class="mobile-product-image" src="" id="mobileProductImage"/>
+                    </div>
+                    <div class="mobile-text-content">
+                        <h1 class="mobile-product-title" id="mobileProductTitle"></h1>
+                        <div class="mobile-badges-container">
+                            <span class="mobile-badge-item mobile-badge-global">
+                                <i class="fas fa-globe"></i> Global
+                            </span>
+                            <span class="mobile-badge-item mobile-badge-instant">
+                                <i class="fas fa-bolt"></i> Entrega Instantánea
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description full width below image and title -->
+                <p class="mobile-product-description" id="mobileProductDescription"></p>
 
-    <section class="products">
-        <div class="container">
-            <div class="products-grid" id="shop-products" data-aos="fade-up"></div>
+                <!-- Contenedor para secciones -->
+                <div class="mobile-sections-container">
+                    <!-- Order Info -->
+                    <section class="mobile-common-card">
+                        <h2 class="mobile-card-title">Información de pedido</h2>
+                        <form class="mobile-form-group" id="mobileInputFields">
+                            <!-- Dynamic input fields or selectors will be loaded here -->
+                        </form>
+                    </section>
+                    <!-- Package Select -->
+                    <section class="mobile-common-card">
+                        <button aria-expanded="false" aria-haspopup="listbox" type="button" class="mobile-package-toggle" id="mobilePackageToggle">
+                            <span id="mobileSelectedPackageText">Selecciona tu paquete</span>
+                            <i class="fas fa-chevron-down mobile-package-arrow"></i>
+                        </button>
+                    </section>
+                    <!-- Payment Methods -->
+                    <section class="mobile-common-card">
+                        <h3 class="mobile-card-title">Métodos de pago</h3>
+                        <form class="mobile-payment-methods-grid" id="mobilePaymentMethods" role="radiogroup" aria-label="Métodos de pago">
+                            <!-- Payment methods will be loaded here by JS -->
+                        </form>
+                    </section>
+                    <!-- Total and Buy Button -->
+                    <section class="mobile-common-card">
+                        <div class="mobile-total-section">
+                            <p class="mobile-total-label">Total</p>
+                            <p class="mobile-total-price" id="mobileTotalPrice">S/ 0.00</p>
+                        </div>
+                        <button type="button" class="mobile-buy-btn">Comprar ahora</button>
+                    </section>
+                </div>
+                    <!-- Mobile Package Selection Modal -->
+    <div id="mobilePackageModal" class="mobile-modal">
+        <div class="mobile-modal-overlay"></div>
+        <div class="mobile-modal-content">
+            <div class="mobile-modal-header">
+                <p class="mobile-modal-title">Seleccione el monto de recarga</p>
+                <button class="mobile-modal-close-btn" id="mobileModalCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="mobilePackageForm" class="mobile-package-form no-scrollbar">
+                <!-- Packages will be loaded here dynamically -->
+            </form>
+            <div class="mobile-modal-confirm-container">
+                <button class="mobile-modal-confirm-btn" id="mobileModalConfirmBtn">
+                    CONFIRMAR
+                </button>
+            </div>
         </div>
-    </section>
+    </div>
+            </section>
+        </div>
+    </main>
 
     <div class="whatsapp-float">
         <a href="https://wa.me/1234567890" target="_blank">
@@ -83,13 +189,6 @@
             <p>© 2024 L-Store. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalBody"></div>
-        </div>
-    </div>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
