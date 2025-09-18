@@ -1,0 +1,245 @@
+{
+    "featured": [
+        {
+            "id": "mobile-legends",
+            "title": "Mobile Legends",
+            "description": "Paquetes de Diamantes",
+            "image": "assets/images/mobile-legends.jpg",
+            "category": "mobile-legends",
+            "badge": "Hot"
+        },
+        {
+            "id": "pubg-mobile",
+            "title": "PUBG Mobile",
+            "description": "UC y Pases de Batalla",
+            "image": "assets/images/pubg-mobile.jpg",
+            "category": "pubg-mobile",
+            "badge": ""
+        },
+        {
+            "id": "free-fire",
+            "title": "Free Fire",
+            "description": "Diamantes y Pases Élite",
+            "image": "assets/images/free-fire.jpg",
+            "category": "free-fire",
+            "badge": "Hot"
+        }
+    ],
+    "all": [
+        {
+            "id": "mobile-legends",
+            "title": "Mobile Legends: Bang Bang",
+            "description": "Paquetes de Diamantes",
+            "image": "assets/images/mobile-legends.jpg",
+            "category": "mobile-legends",
+            "badge": "Hot"
+        },
+        {
+            "id": "free-fire",
+            "title": "Free Fire",
+            "description": "Diamantes y Pases Élite",
+            "image": "assets/images/free-fire.jpg",
+            "category": "free-fire",
+            "badge": "Hot"
+        },
+        {
+            "id": "genshin-impact",
+            "title": "Genshin Impact",
+            "description": "Cristales Génesis",
+            "image": "assets/images/genshin-impact.jpg",
+            "category": "genshin-impact",
+            "badge": ""
+        },
+        {
+            "id": "magic-chess-go-go",
+            "title": "Magic Chess Go Go",
+            "description": "Paquetes Premium",
+            "image": "assets/images/magic-chess-go-go.jpg",
+            "category": "magic-chess-go-go",
+            "badge": ""
+        },
+        {
+            "id": "marvel-rivals",
+            "title": "Marvel Rivals",
+            "description": "Monedas y Paquetes",
+            "image": "assets/images/marvel-rivals.jpg",
+            "category": "marvel-rivals",
+            "badge": ""
+        },
+        {
+            "id": "wild-rift",
+            "title": "Wild Rift",
+            "description": "Wild Cores",
+            "image": "assets/images/wild-rift.jpg",
+            "category": "wild-rift",
+            "badge": ""
+        },
+        {
+            "id": "arena-breakout",
+            "title": "Arena Breakout",
+            "description": "Monedas Premium",
+            "image": "assets/images/arena-breakout.jpg",
+            "category": "arena-breakout",
+            "badge": ""
+        },
+        {
+            "id": "blood-strike",
+            "title": "Blood Strike",
+            "description": "Paquetes Premium",
+            "image": "assets/images/blood-strike.jpg",
+            "category": "blood-strike",
+            "badge": ""
+        },
+        {
+            "id": "zenless-zone-zero",
+            "title": "Zenless Zone Zero",
+            "description": "Monedas Premium",
+            "image": "assets/images/zenless-zone-zero.jpg",
+            "category": "zenless-zone-zero",
+            "badge": ""
+        },
+        {
+            "id": "honor-of-kings",
+            "title": "Honor of Kings",
+            "description": "Tokens Premium",
+            "image": "assets/images/honor-of-kings.jpg",
+            "category": "honor-of-kings",
+            "badge": ""
+        },
+        {
+            "id": "pubg-mobile",
+            "title": "PUBG Mobile",
+            "description": "UC y Pases de Batalla",
+            "image": "assets/images/pubg-mobile.jpg",
+            "category": "pubg-mobile",
+            "badge": ""
+        },
+        {
+            "id": "roblox",
+            "title": "Roblox",
+            "description": "Robux y Paquetes",
+            "image": "assets/images/roblox.jpg",
+            "category": "roblox",
+            "badge": ""
+        }
+    ],
+    "products": [
+        {
+            "id": "ml-diamonds",
+            "title": "Diamantes de Mobile Legends",
+            "description": "Recarga tus diamantes de Mobile Legends de forma rápida y segura. ¡Obtén ventajas en el juego y desbloquea contenido exclusivo!",
+            "image": "assets/images/mobile-legends.jpg",
+            "category": "mobile-legends",
+            "badge": "",
+            "input_fields": [
+                {"id": "userId", "label": "User ID", "placeholder": "Please enter User ID", "type": "text", "pattern": "[0-9]*", "inputmode": "numeric"},
+                {"id": "zoneId", "label": "Zone ID", "placeholder": "Please enter Zone ID", "type": "text", "pattern": "\\d{1,4}", "maxlength": "4"}
+            ],
+            "packages": [
+                { "amount": "78 + 8 Bonus", "price": "4.34", "total_diamonds": 86 },
+                { "amount": "156 + 16 Bonus", "price": "8.67", "total_diamonds": 172 },
+                { "amount": "234 + 23 Bonus", "price": "12.90", "total_diamonds": 257 },
+                { "amount": "312 + 32 Bonus", "price": "17.35", "total_diamonds": 344 },
+                { "amount": "468 + 46 Bonus", "price": "25.80", "total_diamonds": 514 },
+                { "amount": "625 + 81 Bonus", "price": "34.33", "total_diamonds": 706 },
+                { "amount": "1,250 + 162 Bonus", "price": "68.52", "total_diamonds": 1412 },
+                { "amount": "1,860 + 335 Bonus", "price": "103.07", "total_diamonds": 2195 },
+                { "amount": "2,485 + 416 Bonus", "price": "137.40", "total_diamonds": 2901 },
+                { "amount": "3,099 + 589 Bonus", "price": "171.73", "total_diamonds": 3688 },
+                { "amount": "4,649 + 883 Bonus", "price": "258.93", "total_diamonds": 5532 },
+                { "amount": "6,509 + 1,218 Bonus", "price": "362.00", "total_diamonds": 7727 },
+                { "amount": "7,740 + 1,548 Bonus", "price": "431.54", "total_diamonds": 9288 },
+                { "amount": "Pase semanal x1", "price": "5.50", "total_diamonds": 0 },
+                { "amount": "Pase semanal x2", "price": "11.00", "total_diamonds": 0 },
+                { "amount": "Pase semanal x3", "price": "16.50", "total_diamonds": 0 }
+            ]
+        },
+        {
+            "id": "pubg-mobile",
+            "title": "UC de PUBG Mobile",
+            "description": "Consigue Unknown Cash (UC) para PUBG Mobile. Compra skins, pases de temporada y más para dominar el campo de batalla.",
+            "image": "assets/images/pubg-mobile.jpg",
+            "category": "pubg-mobile",
+            "badge": "Popular",
+            "input_fields": [
+                {"id": "userId", "label": "Player ID", "placeholder": "Enter Player ID", "type": "text", "pattern": "[0-9]*", "inputmode": "numeric"}
+            ],
+            "packages": [
+                { "amount": "60 UC", "price": "0.99" },
+                { "amount": "325 UC", "price": "4.99" },
+                { "amount": "660 UC", "price": "9.99" }
+            ]
+        },
+        {
+            "id": "free-fire",
+            "title": "Diamantes de Free Fire",
+            "description": "Recarga tus diamantes de Free Fire al instante. Desbloquea personajes, mascotas, atuendos y pases élite para una experiencia de juego superior.",
+            "image": "assets/images/free-fire.jpg",
+            "category": "free-fire",
+            "badge": "",
+            "input_fields": [
+                {"id": "playerId", "label": "Player ID", "placeholder": "Enter Player ID", "type": "text", "pattern": "[0-9]*", "inputmode": "numeric"}
+            ],
+            "packages": [
+                { "amount": "100 + 10 Diamantes", "price": "3.50", "total_diamonds": 110 },
+                { "amount": "310 + 31 Diamantes", "price": "9.90", "total_diamonds": 341 },
+                { "amount": "520 + 52 Diamantes", "price": "16.50", "total_diamonds": 572 },
+                { "amount": "1060 + 106 Diamantes", "price": "32.90", "total_diamonds": 1166 },
+                { "amount": "2180 + 218 Diamantes", "price": "64.90", "total_diamonds": 2388 },
+                { "amount": "5600 + 560 Diamantes", "price": "165.00", "total_diamonds": 6160 },
+                { "amount": "Tarjeta básica", "price": "1.83", "total_diamonds": 0 },
+                { "amount": "Tarjeta semanal", "price": "6.99", "total_diamonds": 0 },
+                { "amount": "Tarjeta mensual", "price": "36.00", "total_diamonds": 0 }
+            ]
+        },
+        {
+            "id": "genshin-impact",
+            "title": "Cristales Génesis de Genshin Impact",
+            "description": "Obtén Cristales Génesis para Genshin Impact. Invoca personajes y armas poderosas, y avanza en tu aventura por Teyvat.",
+            "image": "assets/images/genshin-impact.jpg",
+            "category": "genshin-impact",
+            "badge": "",
+            "input_fields": [
+                {"id": "uid", "label": "UID", "placeholder": "Enter UID", "type": "text", "pattern": "[0-9]*", "inputmode": "numeric"},
+                {"id": "server", "label": "Server", "type": "select", "options": ["America", "Europe", "Asia", "TW, HK, MO"]}
+            ],
+            "packages": [
+                { "amount": "60 Cristales", "price": "0.99" },
+                { "amount": "300 Cristales", "price": "4.99" },
+                { "amount": "980 Cristales", "price": "14.99" }
+            ]
+        },
+        {
+            "id": "wild-rift",
+            "title": "Wild Cores de Wild Rift",
+            "description": "Compra Wild Cores para League of Legends: Wild Rift. Desbloquea campeones, skins y personaliza tu experiencia en la Grieta.",
+            "image": "assets/images/wild-rift.jpg",
+            "category": "wild-rift",
+            "badge": "",
+            "input_fields": [
+                {"id": "riotId", "label": "Riot ID", "placeholder": "Enter Riot ID (e.g., Player#TAG)", "type": "text"}
+            ],
+            "packages": [
+                { "amount": "100 Wild Cores", "price": "1.50" },
+                { "amount": "500 Wild Cores", "price": "7.00" },
+                { "amount": "1000 Wild Cores", "price": "13.00" }
+            ]
+        },
+        {
+            "id": "honor-of-kings",
+            "title": "Tokens de Honor of Kings",
+            "description": "Adquiere Tokens para Honor of Kings. Desbloquea héroes, skins y acelera tu progreso en el MOBA más popular.",
+            "image": "assets/images/honor-of-kings.jpg",
+            "category": "honor-of-kings",
+            "badge": "",
+            "input_fields": [
+                {"id": "playerId", "label": "Player ID", "placeholder": "Enter Player ID", "type": "text", "pattern": "[0-9]*", "inputmode": "numeric"}
+            ],
+            "packages": [
+                { "amount": "100 Tokens", "price": "1.20" },
+                { "amount": "500 Tokens", "price": "5.50" },
+                { "amount": "1000 Tokens", "price": "10.00" }
+            ]
+        }
+    ]
+}
