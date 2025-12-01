@@ -1,0 +1,34 @@
+{
+    "paymentMethods": [
+        {
+            "id": "yape",
+            "name": "Yape",
+            "image": "assets/paymentMethods/yape.jpg",
+            "textColor": "#D9F99D"
+        },
+        {
+            "id": "visa",
+            "name": "Visa",
+            "image": "assets/paymentMethods/visa.jpg",
+            "textColor": "#D9F99D"
+        },
+        {
+            "id": "mastercard",
+            "name": "Mastercard",
+            "image": "assets/paymentMethods/mastercard.jpg",
+            "textColor": "#D9F99D"
+        },
+        {
+            "id": "paypal",
+            "name": "Paypal",
+            "image": "assets/paymentMethods/paypal.jpg",
+            "textColor": "#D9F99D"
+        },
+        {
+            "id": "googlepay",
+            "name": "Google Pay",
+            "image": "assets/paymentMethods/googlepay.jpg",
+            "textColor": "white"
+        }
+    ]
+}

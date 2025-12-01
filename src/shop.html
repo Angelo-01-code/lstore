@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Store - Recarga de Diamantes y Monedas de Juegos</title>
+    <meta name="description" content="Recarga tus diamantes y monedas de juegos favoritos en L-Store. Proceso r&aacute;pido, seguro y con los mejores precios. &iexcl;Compra ahora!">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=MiSans:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="shop-page">
+    <div id="header-placeholder"></div>
+
+    <main class="product-page-main">
+        <div class="container product-page-container">
+            <section class="pc-layout">
+                <div class="product-info-top">
+                    <div class="product-main-column fade-in">
+                        <div class="product-hero-card">
+                            <div class="product-hero-top">
+                                <img alt="Logo del juego seleccionado" class="product-main-image" src="" id="pcProductImage">
+                                <div class="product-text-content">
+                                    <h2 class="product-main-title" id="pcProductTitle"></h2>
+                                    <div class="product-badges-container">
+                                        <span class="product-badge-item product-badge-global">
+                                            <i class="fas fa-globe" aria-hidden="true"></i> Global
+                                        </span>
+                                        <span class="product-badge-item product-badge-instant">
+                                            <i class="fas fa-bolt" aria-hidden="true"></i> Entrega Instant&aacute;nea
+                                        </span>
+                                    </div>
+                                    <p class="product-description" id="pcProductDescription"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="packages-grid fade-in" id="pcPackagesGrid"></div>
+                    </div>
+                    <div class="order-summary-card fade-in">
+                        <h3 class="card-title">Informaci&oacute;n de pedido</h3>
+                        <div class="input-fields-container" id="pcInputFields"></div>
+                        <div class="order-summary-divider"></div>
+                        <div class="total-section">
+                            <h3 class="total-label">Total</h3>
+                            <span class="total-price" id="pcTotalPrice">S/ 0.00</span>
+                        </div>
+                        <button class="buy-now-btn" id="pcBuyNowBtn">COMPRA AHORA</button>
+                    </div>
+                </div>
+                <section class="payment-methods-section">
+                    <h3 class="payment-methods-title">M&eacute;todos de Pago</h3>
+                    <div class="payment-methods-grid" id="pcPaymentMethods"></div>
+                </section>
+            </section>
+
+            <section class="mobile-layout">
+                <div class="mobile-top-info">
+                    <div class="mobile-image-wrapper">
+                        <img alt="Logo del juego seleccionado" class="mobile-product-image" src="" id="mobileProductImage">
+                    </div>
+                    <div class="mobile-text-content">
+                        <h1 class="mobile-product-title" id="mobileProductTitle"></h1>
+                        <div class="mobile-badges-container">
+                            <span class="mobile-badge-item mobile-badge-global">
+                                <i class="fas fa-globe" aria-hidden="true"></i> Global
+                            </span>
+                            <span class="mobile-badge-item mobile-badge-instant">
+                                <i class="fas fa-bolt" aria-hidden="true"></i> Entrega Instant&aacute;nea
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mobile-product-description" id="mobileProductDescription"></p>
+
+                <div class="mobile-sections-container fade-in">
+                    <section class="mobile-common-card">
+                        <h2 class="mobile-card-title">Informaci&oacute;n de pedido</h2>
+                        <form class="mobile-form-group" id="mobileInputFields"></form>
+                    </section>
+                    <section class="mobile-common-card">
+                        <button aria-expanded="false" aria-haspopup="listbox" type="button" class="mobile-package-toggle" id="mobilePackageToggle">
+                            <span id="mobileSelectedPackageText">Selecciona tu paquete</span>
+                            <i class="fas fa-chevron-down mobile-package-arrow" aria-hidden="true"></i>
+                        </button>
+                    </section>
+                    <section class="mobile-common-card">
+                        <h3 class="mobile-card-title">M&eacute;todos de pago</h3>
+                        <form class="mobile-payment-methods-grid" id="mobilePaymentMethods" role="radiogroup" aria-label="M&eacute;todos de pago"></form>
+                    </section>
+                    <section class="mobile-common-card">
+                        <div class="mobile-total-section">
+                            <p class="mobile-total-label">Total</p>
+                            <p class="mobile-total-price" id="mobileTotalPrice">S/ 0.00</p>
+                        </div>
+                        <button type="button" class="mobile-buy-btn" id="mobileBuyNowBtn">Comprar ahora</button>
+                    </section>
+                </div>
+
+                <div id="mobilePackageModal" class="mobile-modal" role="dialog" aria-modal="true" aria-label="Selecciona el paquete de recarga">
+                    <div class="mobile-modal-overlay"></div>
+                    <div class="mobile-modal-content">
+                        <div class="mobile-modal-header">
+                            <p class="mobile-modal-title">Seleccione el monto de recarga</p>
+                            <button class="mobile-modal-close-btn" id="mobileModalCloseBtn" aria-label="Cerrar modal de paquetes">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <form id="mobilePackageForm" class="mobile-package-form no-scrollbar"></form>
+                        <div class="mobile-modal-confirm-container">
+                            <button class="mobile-modal-confirm-btn" id="mobileModalConfirmBtn">CONFIRMAR</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recharge-instructions">
+                <div class="container recharge-grid">
+                    <div class="recharge-card">
+                        <p class="eyebrow">Instrucciones de recarga</p>
+                        <p class="recharge-text">Por favor aseg&uacute;rate de que tus datos est&eacute;n bien escritos.</p>
+                        <div class="recharge-meta">
+                            <div>
+                                <span class="label">Plataforma</span>
+                                <p>Aplica a todas las plataformas.</p>
+                            </div>
+                            <div>
+                                <span class="label">Servidor</span>
+                                <p>Global.</p>
+                            </div>
+                            <div>
+                                <span class="label">Datos necesarios</span>
+                                <p>ID + servidor seg&uacute;n se requiera.</p>
+                            </div>
+                            <div>
+                                <span class="label">Tiempo de recarga</span>
+                                <p>El env&iacute;o es autom&aacute;tico y se entrega al instante tras el pago.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recharge-card">
+                        <p class="eyebrow">C&oacute;mo obtener los datos</p>
+                        <div class="uid-guide">
+                            <img id="uidGuideImage" src="../assets/images/placeholder.jpg" alt="Ejemplo de pantalla con el UID resaltado" loading="lazy">
+                            <p class="muted">Abre tu perfil y copia el ID que se muestra (seg&uacute;n el juego).</p>
+                        </div>
+                        <div class="recharge-note">
+                            <p class="eyebrow">Por qu&eacute; L-Store</p>
+                            <ul class="checklist">
+                                <li>Precios competitivos y opciones mayoristas.</li>
+                                <li>Pagos cifrados y trazabilidad de cada pedido.</li>
+                                <li>M&uacute;ltiples m&eacute;todos de pago disponibles.</li>
+                                <li>Soporte humano 24/7 con SLA claro.</li>
+                                <li>Entrega r&aacute;pida en minutos en t&iacute;tulos top.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="orderConfirmationModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="orderConfirmationTitle">
+        <div class="modal-content">
+            <h2 id="orderConfirmationTitle">Confirmaci&oacute;n de Pedido</h2>
+            <p>Por favor, revisa los detalles de tu pedido antes de continuar:</p>
+            <div id="orderSummary" class="order-summary"></div>
+            <div class="modal-actions">
+                <button id="confirmOrderBtn" class="btn btn-primary">Confirmar y Pagar por WhatsApp</button>
+                <button id="cancelOrderBtn" class="btn btn-secondary">Cancelar</button>
+            </div>
+            <button class="close-modal-btn" aria-label="Cerrar modal de confirmaci&oacute;n">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="js/bundle.js"></script>
+</body>
+</html>

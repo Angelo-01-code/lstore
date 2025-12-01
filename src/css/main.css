@@ -1,0 +1,16 @@
+/* Main CSS file - Imports all other CSS modules */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('base.css');
+@import url('utilities.css');
+@import url('components.css');
+@import url('layouts.css');
+@import url('responsive.css');
+
+/* AOS Animations */
+[data-aos] {
+    pointer-events: none;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}

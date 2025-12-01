@@ -1,0 +1,145 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--white);
+    background-color: var(--dark-color);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--light-color);
+}
+
+.btn:focus-visible,
+.filter-btn:focus-visible,
+.nav a:focus-visible,
+.carousel-button:focus-visible,
+.pagination-dot:focus-visible,
+.whatsapp-float:focus-visible,
+.mobile-package-toggle:focus-visible,
+.mobile-payment-label:focus-visible,
+.mobile-modal-close-btn:focus-visible,
+.mobile-modal-confirm-btn:focus-visible,
+.close-modal-btn:focus-visible {
+    outline: 3px solid var(--warning-color);
+    outline-offset: 3px;
+    border-radius: var(--border-radius);
+}
+
+.carousel-button:focus-visible,
+.pagination-dot:focus-visible,
+.whatsapp-float:focus-visible {
+    border-radius: 50%;
+}
+
+@media print {
+    .site-header,
+    .whatsapp-float,
+    .nav-toggle,
+    .modal {
+        display: none !important;
+    }
+
+    body {
+        background-color: var(--white) !important;
+        color: var(--black) !important;
+    }
+
+    section {
+        background-color: var(--white) !important;
+        color: var(--black) !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .hero-carousel,
+    .cta-section,
+    .shop-header,
+    .games-header,
+    .contact-header,
+    .quick-order {
+        background: none !important;
+        color: var(--black) !important;
+    }
+
+    .game-card,
+    .service-card,
+    .testimonial-card,
+    .contact-card,
+    .hours-item,
+    .faq-item,
+    .trust-item,
+    .upcoming-tag,
+    .footer-section {
+        background-color: #f0f0f0 !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .logo,
+    h1, h2, h3, h4, h5, h6,
+    .btn,
+    .time,
+    .trust-number,
+    .footer-section h3,
+    .footer-section h4 {
+        color: var(--black) !important;
+        text-shadow: none !important;
+    }
+
+    a {
+        color: #0000EE !important;
+        text-decoration: underline !important;
+    }
+
+    .btn {
+        border: 1px solid #000 !important;
+    }
+
+    .footer-bottom p {
+        color: #555 !important;
+    }
+}

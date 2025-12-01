@@ -1,0 +1,30 @@
+<!-- src/partials/header.html -->
+<header class="site-header">
+    <div class="container header-content">
+        <h1 class="logo">
+            <a href="index.html" aria-label="Ir a Inicio">L-Store</a>
+        </h1>
+        <div class="header-search" role="search">
+            <button type="button" id="gameSearchButton" aria-label="Buscar juegos" class="search-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.71.71l.27.28v.78l5 5 1.5-1.5-5-5zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="currentColor"/>
+                </svg>
+            </button>
+            <input type="search" id="gameSearchInput" name="search" placeholder="Buscar juegos" autocomplete="off" aria-label="Busca tus juegos favoritos">
+            <div id="gameSearchResults" class="search-suggestions" role="listbox" aria-label="Resultados de búsqueda de juegos"></div>
+        </div>
+        <nav class="nav" id="primary-navigation" aria-label="Navegacion principal">
+            <ul>
+                <li><a href="index.html" class="nav-link" data-page="index">Inicio</a></li>
+                <li><a href="#" id="tienda-link" class="nav-link" data-page="shop">Tienda</a></li>
+                <li><a href="games.html" class="nav-link" data-page="games">Colaboraci&oacute;n</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" type="button" aria-label="Abrir o cerrar navegacion" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
