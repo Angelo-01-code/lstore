@@ -28,7 +28,7 @@
             "id": "googlepay",
             "name": "Google Pay",
             "image": "assets/paymentMethods/googlepay.jpg",
-            "textColor": "white"
+            "textColor": "#D9F99D"
         }
     ]
 }

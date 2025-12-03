@@ -70,10 +70,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -114,6 +117,8 @@ a {
     color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 a:hover {
@@ -1101,6 +1106,129 @@ section h2 {
     font-size: 0.9rem;
 }
 
+/* Footer accordions */
+.footer-accordion-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    width: 100%;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    cursor: default;
+    position: relative;
+}
+
+.footer-accordion-toggle span {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-chevron {
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    transition: var(--transition);
+    position: absolute;
+    right: 0;
+}
+
+.footer-accordion-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-top: 0.6rem;
+    width: max-content;
+}
+
+/* Remove tap/selection highlight on footer accordions/links for mobile */
+.footer-accordion-toggle,
+.footer-accordion-panel a,
+.footer-accordion-toggle span,
+.footer-accordion-toggle *,
+.footer-accordion-panel a * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    background-color: transparent !important;
+}
+
+.footer-accordion-toggle:focus,
+.footer-accordion-toggle:focus-visible,
+.footer-accordion-panel a:focus-visible,
+.footer-accordion-toggle span:focus-visible,
+.footer-accordion-toggle:active,
+.footer-accordion-panel a:active {
+    outline: none;
+    box-shadow: none;
+    background: transparent !important;
+}
+
+.footer-accordion,
+.footer-accordion * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.footer-accordion-toggle:active,
+.footer-accordion-panel a:active {
+    background-color: transparent !important;
+}
+
+/* Footer accordions */
+.footer-accordion-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    width: 100%;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    cursor: default;
+    position: relative;
+}
+
+.footer-accordion-toggle span {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-chevron {
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    transition: var(--transition);
+    position: absolute;
+    right: 0;
+}
+
+.footer-accordion-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-top: 0.6rem;
+    width: max-content;
+}
+
 /* Mobile Header Adjustments */
 @media (max-width: 767px) {
     .nav {
@@ -1152,11 +1280,12 @@ section h2 {
     } */
     .carousel-pagination {
         bottom: 10px;
-        gap: 8px;
+        gap: 12px;
     }
     .pagination-dot {
-        width: 10px;
-        height: 10px;
+        width: 26px;
+        height: 5px;
+        border-radius: 999px;
     }
 
     /* Responsive adjustments for game titles */
@@ -2480,4 +2609,54 @@ body.shop-page {
 /* Estilo específico para el Pase semanal (si usa una clase diferente) */
 .mobile-package-label.weekly-pass .amount-text {
     margin-bottom: 0; /* Elimina margen inferior si no hay total-text */
+}
+
+/* Footer accordion behaviors */
+@media (max-width: 767px) {
+    .footer-accordion-toggle {
+        width: 100%;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .footer-accordion-panel {
+        width: 100%;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-accordion.open .footer-accordion-panel {
+        max-height: 320px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .footer-accordion.open .footer-chevron {
+        transform: rotate(-135deg);
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-accordion-toggle {
+        width: auto;
+        justify-content: flex-start;
+        gap: 6px;
+        cursor: default;
+    }
+    .footer-accordion-toggle span {
+        flex: 0;
+        text-align: left;
+    }
+    .footer-accordion-toggle .footer-chevron {
+        display: none;
+    }
+    .footer-accordion-panel {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+    }
 }

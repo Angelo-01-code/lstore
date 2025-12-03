@@ -8,6 +8,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -47,10 +48,21 @@ a {
     color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 a:hover {
     color: var(--light-color);
+}
+
+button,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
 }
 
 .btn:focus-visible,

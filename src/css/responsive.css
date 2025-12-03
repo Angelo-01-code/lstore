@@ -11,10 +11,11 @@
         top: var(--header-height);
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.96);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.88));
         padding: 1.5rem;
         text-align: center;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
     }
 
     .nav ul {
@@ -45,8 +46,12 @@
     .hero-carousel { padding-top: 16px; }
     .hero-carousel .container { border-radius: var(--card-radius); }
     .carousel-slide { height: 260px; }
-    .carousel-pagination { bottom: 12px; gap: 8px; }
-    .pagination-dot { width: 10px; height: 10px; }
+    .carousel-pagination { bottom: 12px; gap: 12px; }
+    .pagination-dot {
+        width: 26px;
+        height: 5px;
+        border-radius: 999px;
+    }
 
     .cta-section { margin: 0; border-radius: 0; }
     .cta-content h2 { font-size: 2.2rem; }
@@ -90,6 +95,33 @@
     .trust-grid,
     .footer-content {
         grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 1.1rem;
+    }
+
+    .footer-links,
+    .footer-links-grid,
+    .footer-social-grid {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-links-grid {
+        width: auto;
+        align-items: center;
+    }
+
+    .footer-accordion-toggle {
+        width: 100%;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-social-grid {
+        justify-items: center;
+        margin: 0.3rem auto 0;
     }
 
     .contact-card,
@@ -140,6 +172,24 @@
 
 /* Mobile-first shop layout */
 @media (max-width: 767px) {
+    /* Compact header spacing on mobile */
+    .header-content {
+        padding: 0.6rem 0;
+        column-gap: 0.5rem;
+    }
+
+    .logo { font-size: 1.4rem; }
+
+    .header-search {
+        max-width: 160px;
+        min-width: 120px;
+        padding: 4px 8px;
+    }
+
+    .header-search input { font-size: 0.85rem; }
+
+    .nav-toggle span { width: 22px; }
+
     .carousel-slide { height: 220px; }
 
     section h2 { margin-bottom: 1.35rem; }
@@ -169,6 +219,47 @@
     .footer-links-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         justify-items: center;
+    }
+
+    .footer-social-grid {
+        grid-template-columns: repeat(6, 42px);
+        grid-auto-rows: 42px;
+        gap: 10px;
+    }
+
+    .footer-accordion-toggle {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+
+    .footer-accordion-panel {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+
+    .footer-accordion.open .footer-accordion-panel {
+        max-height: 320px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .footer-accordion.open .footer-chevron {
+        transform: rotate(-135deg);
+    }
+
+    .footer-social-grid a {
+        width: 42px;
+        height: 42px;
     }
 
     .footer-contact-list { gap: 0.5rem; }
@@ -236,14 +327,13 @@
     .recharge-grid { gap: 0.6rem; }
     .recharge-card { padding: 1.1rem 1.25rem; }
 
-    /* Featured games: horizontal swipe carousel on mobile */
+    /* Featured games: carrusel horizontal estable en mobile */
     .featured-games .games-grid {
         display: flex;
         overflow-x: auto;
         gap: 1rem;
         padding: 0 6px;
-        margin: 0 -6px;
-        scroll-snap-type: x mandatory;
+        margin: 0;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -252,9 +342,9 @@
     .featured-games .games-grid::-webkit-scrollbar { display: none; }
 
     .featured-games .game-card {
-        flex: 0 0 42vw;
-        max-width: 42vw;
-        scroll-snap-align: start;
+        flex: 0 0 38vw;
+        max-width: 38vw;
+        min-width: 150px;
     }
 
     .product-page-container { gap: 1.5rem; }
@@ -272,4 +362,15 @@
     .carousel-slide { height: 190px; }
     .game-title { font-size: 0.82rem; padding: 6px 4px; height: 38px; }
     .whatsapp-float { width: 48px; height: 48px; bottom: 16px; right: 16px; }
+}
+
+@media (min-width: 769px) {
+    .footer-accordion-panel {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+    }
+    .footer-accordion-toggle {
+        cursor: default;
+    }
 }

@@ -125,6 +125,11 @@ export const initializeCarousel = () => {
         resetAutoSlide();
     };
 
+    const prevSlide = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+    };
+
     const nextSlide = () => {
         currentIndex = (currentIndex + 1) % images.length;
         updateCarousel();
@@ -154,6 +159,7 @@ export const initializeCarousel = () => {
             img.loading = 'lazy';
             img.width = 1920;
             img.height = 1080;
+            img.draggable = false;
 
             slide.appendChild(img);
             carouselSlides.appendChild(slide);
@@ -169,7 +175,61 @@ export const initializeCarousel = () => {
         startAutoSlide();
     };
 
+    const enableDragNavigation = () => {
+        let startX = 0;
+        let deltaX = 0;
+        let isDragging = false;
+
+        const getClientX = (event) => event.touches ? event.touches[0].clientX : event.clientX;
+
+        const onDragStart = (event) => {
+            if (event.type === 'mousedown' && event.button !== 0) return;
+            event.preventDefault();
+            startX = getClientX(event);
+            isDragging = true;
+            deltaX = 0;
+            carouselSlides.style.transition = 'none';
+            clearInterval(slideInterval);
+        };
+
+        const onDragMove = (event) => {
+            if (!isDragging) return;
+            if (event.cancelable) event.preventDefault();
+            const currentX = getClientX(event);
+            deltaX = currentX - startX;
+            carouselSlides.style.transform = `translateX(calc(-${currentIndex * 100}% + ${deltaX}px))`;
+        };
+
+        const onDragEnd = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            carouselSlides.style.transition = 'transform 0.6s ease';
+
+            if (Math.abs(deltaX) > 60) {
+                if (deltaX < 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            } else {
+                updateCarousel();
+            }
+            resetAutoSlide();
+        };
+
+        carouselSlides.addEventListener('dragstart', (e) => e.preventDefault());
+        carouselSlides.addEventListener('mousedown', onDragStart);
+        carouselSlides.addEventListener('touchstart', onDragStart, { passive: true });
+        window.addEventListener('mousemove', onDragMove, { passive: false });
+        window.addEventListener('touchmove', onDragMove, { passive: false });
+        window.addEventListener('mouseup', onDragEnd);
+        window.addEventListener('mouseleave', onDragEnd);
+        window.addEventListener('touchend', onDragEnd);
+        window.addEventListener('touchcancel', onDragEnd);
+    };
+
     createSlides();
+    enableDragNavigation();
 };
 
 export const renderGames = (games, containerId, cardClass) => {
@@ -241,7 +301,8 @@ export const renderPaymentMethods = (methods, containerElement, type) => {
         imgWrapper.appendChild(img);
 
         const span = document.createElement('span');
-        span.style.color = method.textColor || 'white';
+        const textColor = method.id === 'googlepay' ? '#D9F99D' : (method.textColor || '#D9F99D');
+        span.style.color = textColor;
         span.textContent = method.name;
 
         label.appendChild(input);

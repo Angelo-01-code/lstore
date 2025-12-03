@@ -45,20 +45,22 @@ export const initializeNavigation = () => {
         });
 
         // Legal modal
-        const legalLink = document.getElementById('legal-link');
+        const legalLinks = document.querySelectorAll('#legal-link, #terms-link, .footer-legal-link');
         const legalModal = document.getElementById('legalModal');
         const legalCloseBtn = document.getElementById('legalCloseBtn');
-        if (legalLink && legalModal) {
+        if (legalLinks.length && legalModal) {
             const closeLegal = () => {
                 legalModal.classList.remove('show');
                 legalModal.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = 'auto';
             };
-            legalLink.addEventListener('click', () => {
+            const openLegal = () => {
                 legalModal.classList.add('show');
                 legalModal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
-            });
+            };
+
+            legalLinks.forEach(link => link.addEventListener('click', openLegal));
             if (legalCloseBtn) {
                 legalCloseBtn.addEventListener('click', closeLegal);
             }

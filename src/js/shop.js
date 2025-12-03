@@ -157,6 +157,9 @@ const renderInputFields = (inputFields, container, type) => {
                 input.maxLength = 4;
                 input.inputMode = 'numeric';
             }
+            if (field.id === 'userId') {
+                input.inputMode = 'numeric';
+            }
             div.appendChild(input);
 
             input.addEventListener('input', () => {
@@ -198,7 +201,7 @@ const renderInputFields = (inputFields, container, type) => {
             nicknameInput.className = `${type}-input-field`;
             nicknameInput.id = 'nickname';
             nicknameInput.type = 'text';
-            nicknameInput.placeholder = 'Nick se llenar\u00e1 autom\u00e1ticamente';
+            nicknameInput.placeholder = 'Se llenar\u00e1 autom\u00e1ticamente';
             nicknameInput.readOnly = true;
             nicknameInput.autocomplete = 'off';
             nicknameInput.autocorrect = 'off';
@@ -250,9 +253,11 @@ const renderPackages = (packages, container, totalPriceSpan, type) => {
                 const totalDiamonds = packageItem.getAttribute('data-total-diamonds');
                 const mobileSelectedPackageText = document.getElementById('mobileSelectedPackageText');
                 if (mobileSelectedPackageText) {
-                    const displayTotalDiamonds = totalDiamonds && parseFloat(totalDiamonds) > 0 ? `<span class="package-total-highlight subtle-accent">Total: ${totalDiamonds} Diamantes</span>` : '';
+                    const displayTotalDiamonds = totalDiamonds && parseFloat(totalDiamonds) > 0
+                        ? `<span class="mobile-selected-total package-total-highlight subtle-accent">Total: ${totalDiamonds} Diamantes</span>`
+                        : '';
                     mobileSelectedPackageText.innerHTML = `
-                        <span>${amount}</span>
+                        <span class="mobile-selected-amount">${amount}</span>
                         ${displayTotalDiamonds}
                     `;
                 }
@@ -263,17 +268,6 @@ const renderPackages = (packages, container, totalPriceSpan, type) => {
 
     if (packages.length > 0) {
         totalPriceSpan.textContent = `S/ ${parseFloat(packages[0].price).toFixed(2)}`;
-        if (type === 'mobile') {
-            const mobileSelectedPackageText = document.getElementById('mobileSelectedPackageText');
-            if (mobileSelectedPackageText) {
-                const firstPkg = packages[0];
-                const totalDiamonds = typeof firstPkg.total_diamonds === 'number' && firstPkg.total_diamonds > 0 ? firstPkg.total_diamonds : '';
-                mobileSelectedPackageText.innerHTML = `
-                    <span>${firstPkg.amount}</span>
-                    ${totalDiamonds ? `<span class="package-total-highlight subtle-accent">Total: ${totalDiamonds} Diamantes</span>` : ''}
-                `;
-            }
-        }
     } else {
         totalPriceSpan.textContent = 'S/ 0.00';
     }
@@ -310,7 +304,6 @@ const initializeMobilePackageModal = (packages, toggleBtn, selectedPackageTextSp
     });
     form.appendChild(fragment);
 
-    updateMobileToggleText(currentSelectedPackage, selectedPackageTextSpan);
     totalPriceSpan.textContent = `S/ ${parseFloat(currentSelectedPackage.price).toFixed(2)}`;
 
     toggleBtn.addEventListener('click', () => {
@@ -398,8 +391,8 @@ const updateModalSelectionCircles = (form) => {
 const updateMobileToggleText = (pkg, spanElement) => {
     const totalDiamonds = typeof pkg.total_diamonds === 'number' && pkg.total_diamonds > 0 ? pkg.total_diamonds : '';
     spanElement.innerHTML = `
-        <span>${pkg.amount}</span>
-        ${totalDiamonds ? `<span class="package-total-highlight subtle-accent">Total: ${totalDiamonds} Diamantes</span>` : ''}
+        <span class="mobile-selected-amount">${pkg.amount}</span>
+        ${totalDiamonds ? `<span class="mobile-selected-total package-total-highlight subtle-accent">Total: ${totalDiamonds} Diamantes</span>` : ''}
     `;
 };
 

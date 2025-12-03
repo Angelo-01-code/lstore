@@ -45,7 +45,10 @@
                         <div class="order-summary-divider"></div>
                         <div class="total-section">
                             <h3 class="total-label">Total</h3>
-                            <span class="total-price" id="pcTotalPrice">S/ 0.00</span>
+                            <div class="total-price-wrapper">
+                                <span class="total-price" id="pcTotalPrice">S/ 0.00</span>
+                                <span class="total-note">Precio final con impuestos incluidos</span>
+                            </div>
                         </div>
                         <button class="buy-now-btn" id="pcBuyNowBtn">COMPRA AHORA</button>
                     </div>
@@ -95,6 +98,7 @@
                             <p class="mobile-total-label">Total</p>
                             <p class="mobile-total-price" id="mobileTotalPrice">S/ 0.00</p>
                         </div>
+                        <p class="mobile-total-note">Precio final con impuestos incluidos</p>
                         <button type="button" class="mobile-buy-btn" id="mobileBuyNowBtn">Comprar ahora</button>
                     </section>
                 </div>
@@ -103,7 +107,10 @@
                     <div class="mobile-modal-overlay"></div>
                     <div class="mobile-modal-content">
                         <div class="mobile-modal-header">
-                            <p class="mobile-modal-title">Seleccione el monto de recarga</p>
+                            <div class="mobile-modal-title-group">
+                                <p class="mobile-modal-title">Seleccione el monto de recarga</p>
+                                <p class="mobile-modal-subtitle">Precio final con impuestos incluidos.</p>
+                            </div>
                             <button class="mobile-modal-close-btn" id="mobileModalCloseBtn" aria-label="Cerrar modal de paquetes">
                                 <i class="fas fa-times" aria-hidden="true"></i>
                             </button>

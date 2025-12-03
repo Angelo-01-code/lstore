@@ -157,7 +157,8 @@
             imgWrapper.appendChild(img);
 
             const span = document.createElement('span');
-            span.style.color = method.textColor || 'white';
+            const textColor = method.id === 'googlepay' ? '#D9F99D' : (method.textColor || '#D9F99D');
+            span.style.color = textColor;
             span.textContent = method.name;
 
             label.appendChild(input);

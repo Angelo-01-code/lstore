@@ -167,7 +167,7 @@
                 {
                     "id": "zoneId",
                     "label": "Zone ID",
-                    "placeholder": "Please enter Zone ID (4 dígitos)",
+                    "placeholder": "Please enter Zone ID",
                     "type": "text",
                     "pattern": "\\d{4}",
                     "maxlength": "4"
